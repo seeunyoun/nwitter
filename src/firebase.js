@@ -8,9 +8,10 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_API_BUCKET,
   messagingSenderId: process.env.REACT_APP_API_M_S_ID,
   appId: process.env.REACT_APP_API_APP_ID
-};
+}
 
-const app = initializeApp(firebaseConfig);
-const authService = getAuth(app);
+const app = initializeApp(firebaseConfig)
+const authService = getAuth(app)
 
+export const firebaseInstance = getAuth(app);
 export default authService
