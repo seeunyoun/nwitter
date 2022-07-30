@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import authService, { firebaseInstance } from '../Firebase';
+import authService from '../Firebase';
 import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from '@firebase/auth';
 
 const Auth = () => {
@@ -15,13 +15,12 @@ const Auth = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
         try {
-            let data;
             if (newAccount) {
-                data = await createUserWithEmailAndPassword(
+                await createUserWithEmailAndPassword(
                     authService, email, password
                 )
             } else {
-                data = await signInWithEmailAndPassword(
+                await signInWithEmailAndPassword(
                     authService, email, password
                 )
             }
@@ -37,7 +36,7 @@ const Auth = () => {
         try {
             if (name === 'google') provider = new GoogleAuthProvider();
             else if (name === 'github') provider = new GithubAuthProvider();
-            const data = await signInWithPopup(authService, provider);
+            await signInWithPopup(authService, provider);
         } catch (error) {
             setError(error.message);
         }

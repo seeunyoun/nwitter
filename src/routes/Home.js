@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { dbService } from '../Firebase';
-import { collection, addDoc, getDocs, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import Nweet from '../components/Nweet';
 
 const Home = ({ userObj }) => {
