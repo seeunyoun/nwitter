@@ -5,8 +5,8 @@ import firebase from './Firebase';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> Stric Mode에서 두 번씩 렌더링 됨.
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
