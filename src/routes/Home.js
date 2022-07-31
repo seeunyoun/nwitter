@@ -22,7 +22,7 @@ const Home = ({ userObj }) => {
     }, []);
     const onSubmit = async (e) => {
         e.preventDefault();
-        let attachmentUrl;
+        let attachmentUrl = '';
         if (attachment !== '') {
             const attachmentRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
             await uploadString(attachmentRef, attachment, 'data_url');
