@@ -30,16 +30,16 @@ function AuthForm() {
   }
   const toggleAccount = () => setNewAccount((prev => !prev));
   return (
-    <div>
+    <div className='auth-form-wrapper'>
       <form onSubmit={onSubmit}>
-        <input name='email' type='email' placeholder='Email' required value={email} onChange={onChange} />
-        <input name='password' type='password' placeholder='Password' required value={password} onChange={onChange} />
-        <input type="submit" value={newAccount ? 'Create Account' : 'Log In'} />
+        <input className='email-input' name='email' type='email' placeholder='Email' required value={email} onChange={onChange} />
+        <input className='password-input' name='password' type='password' placeholder='Password' required value={password} onChange={onChange} />
+        <input className='submit-input' type="submit" value={newAccount ? 'Create Account' : 'Log In'} />
         {error}
       </form>
-      <span onClick={toggleAccount}>
-        {newAccount ? 'Log In' : 'Create Account'}
-      </span>
+      <div className='toggle-text' onClick={toggleAccount}>
+        {newAccount ? `I've got the accout. Log In` : `I don't have an account. Create Account`}
+      </div>
     </div>
   )
 }

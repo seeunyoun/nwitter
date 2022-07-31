@@ -18,10 +18,10 @@ const Auth = () => {
   }
 
   return (
-    <div>
-      <h2>Please Login</h2>
+    <div className='auth'>
+      <h2 className='title'>Nweeter</h2>
       <AuthForm />
-      <div>
+      <div className='social-login-wrapper'>
         <button name='google' onClick={onSocialClick}>Continue with Google</button>
         <button name='github' onClick={onSocialClick}>Continue with Github</button>
       </div>
