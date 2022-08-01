@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { dbService } from '../Firebase';
+import authService, { dbService } from '../Firebase';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
 import Nweet from '../components/Nweet';
 import NweetFactory from 'components/NweetFactory';
+import { onAuthStateChanged } from '@firebase/auth';
 
 const Home = ({ userObj }) => {
   const [nweets, setNweets] = useState([]);
   useEffect(() => {
     const q = query(collection(dbService, 'nweets'), orderBy('createdAt', 'desc'));
 
-    onSnapshot(q, (snapshot) => {
+    const unsubscribe = onSnapshot(q, (snapshot) => {
       const nweetArr = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
       setNweets(nweetArr)
+    });
+
+    onAuthStateChanged(authService, (user) => {
+      if (user === null) unsubscribe();
     });
   }, []);
 
