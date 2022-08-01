@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/seeunyoun/nwitter/static/css/main.f8665ddd.css",
+    "main.js": "/seeunyoun/nwitter/static/js/main.c58767f5.js",
+    "index.html": "/seeunyoun/nwitter/index.html",
+    "main.f8665ddd.css.map": "/seeunyoun/nwitter/static/css/main.f8665ddd.css.map",
+    "main.c58767f5.js.map": "/seeunyoun/nwitter/static/js/main.c58767f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8665ddd.css",
+    "static/js/main.c58767f5.js"
+  ]
+}
