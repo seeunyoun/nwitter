@@ -9,6 +9,7 @@ const NweetFactory = ({ userObj }) => {
   const [attachment, setAttachment] = useState('');
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (!nweet.trim().length) return window.alert('Please write down something.');
     let attachmentUrl = '';
     if (attachment !== '') {
         const attachmentRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
@@ -31,7 +32,7 @@ const NweetFactory = ({ userObj }) => {
   }
   const onFileChange = (e) => {
     const { target: { files } } = e;
-    const theFile = files[0];
+    const theFile = files?.[0];
     const reader = new FileReader();
     reader.onloadend = (finishedEvent) => {
         const { currentTarget: { result } } = finishedEvent;
@@ -39,7 +40,7 @@ const NweetFactory = ({ userObj }) => {
     }
     reader.readAsDataURL(theFile);
   }
-  const onClearAttachmentClick = () => setAttachment(null);
+  const onClearAttachmentClick = () => setAttachment('');
   return (
     <form onSubmit={onSubmit}>
       <input value={nweet} onChange={onChange} type="text" placeholder="What's on your mind?" maxLength={120} />
@@ -47,8 +48,8 @@ const NweetFactory = ({ userObj }) => {
       <input type="submit" value='Nweet' />
       {attachment &&
       <div className='attachment-wrapper'>
-          <img src={attachment} width='50' height='50' alt ='' />
-          <button onClick={onClearAttachmentClick}>Clear</button>
+        <img src={attachment} width='50' height='50' alt ='' />
+        <button onClick={onClearAttachmentClick}>Clear</button>
       </div>
       }
     </form>

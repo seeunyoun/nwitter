@@ -1,6 +1,8 @@
 @use '../mixin/flexbox' as flex;
 
 .nav {
+  max-width: 200px;
+  
   ul {
     @include flex.column-flexbox(center, start);
 

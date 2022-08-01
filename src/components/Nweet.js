@@ -32,6 +32,13 @@ const Nweet = ({ nweetObj, isOwner }) => {
     const { target: { value } } = e;
     setNewNweet(value);
   }
+  const timestamp = new Intl.DateTimeFormat("en-EN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(nweetObj.createdAt);
   return (
     <div className='nweet'>
       {editing ? (
@@ -45,6 +52,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
       ) : (
         <>
           <h4 className='content'>{nweetObj.text}</h4>
+          <div className='time'>{timestamp}</div>
           {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} width='50' height='50' alt='' />}
           {isOwner && (
             <div className="btns-wrapper">

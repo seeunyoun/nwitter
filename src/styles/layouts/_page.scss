@@ -8,7 +8,6 @@
 .container {
   @include flex.column-flexbox();
   width: 65%;
-  height: 100vh;
   margin: 0 auto;
 
   & > form,

@@ -33,6 +33,21 @@ form {
   input[type=password] {
     @extend %input-base;
   }
+  input[type=submit] {
+    @extend %input-base;
+    width: fit-content;
+    padding: 0 12px;
+    border: 0;
+    background-color: #3068ef;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+
+    &:not(:disabled):hover {
+      background-color: #2858c9;
+    }
+  }
 
   .input-attachment {
     width: 100%;

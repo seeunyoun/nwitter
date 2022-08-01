@@ -13,10 +13,7 @@ const Profile = ({ refreshUser, userObj }) => {
   }
   const getMyNweets = async () => {
     const q = query(collection(dbService, 'nweets'), where('creatorId', '==', userObj.uid), orderBy('createdAt'));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, '==', doc.data())
-    });
+    await getDocs(q);
   }
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +33,8 @@ const Profile = ({ refreshUser, userObj }) => {
   }, []);
 
   return (
-    <div>
+    <div className='container'>
+      <h2 className='title'>Change your profile name</h2>
       <form onSubmit={onSubmit}>
         <input onChange={onChange} type="text" placeholder='Display name' value={newDisplayName} />
         <input type="submit" value='Update Profile' />
