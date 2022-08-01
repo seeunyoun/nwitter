@@ -43,11 +43,11 @@ const NweetFactory = ({ userObj }) => {
   return (
     <form onSubmit={onSubmit}>
       <input value={nweet} onChange={onChange} type="text" placeholder="What's on your mind?" maxLength={120} />
-      <input type="file" accept='image/*' onChange={onFileChange} />
+      <input className='input-attachment' type="file" accept='image/*' onChange={onFileChange} />
       <input type="submit" value='Nweet' />
       {attachment &&
-      <div>
-          <img src={attachment} width='50' height='50' />
+      <div className='attachment-wrapper'>
+          <img src={attachment} width='50' height='50' alt ='' />
           <button onClick={onClearAttachmentClick}>Clear</button>
       </div>
       }

@@ -32,8 +32,8 @@ function AuthForm() {
   return (
     <div className='auth-form-wrapper'>
       <form onSubmit={onSubmit}>
-        <input className='email-input' name='email' type='email' placeholder='Email' required value={email} onChange={onChange} />
-        <input className='password-input' name='password' type='password' placeholder='Password' required value={password} onChange={onChange} />
+        <input name='email' type='email' placeholder='Email' required value={email} onChange={onChange} />
+        <input name='password' type='password' placeholder='Password' required value={password} onChange={onChange} />
         <input className='submit-input' type="submit" value={newAccount ? 'Create Account' : 'Log In'} />
         {error}
       </form>

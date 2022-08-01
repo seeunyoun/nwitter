@@ -19,7 +19,7 @@ const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <div>
+    <div className='container'>
       <NweetFactory userObj={userObj} />
       <div>
         {nweets.map((nweet) => (

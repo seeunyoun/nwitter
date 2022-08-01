@@ -1,0 +1,16 @@
+@use '../mixin/flexbox' as flex;
+
+.nav {
+  ul {
+    @include flex.column-flexbox(center, start);
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+}

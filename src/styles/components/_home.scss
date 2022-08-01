@@ -1,0 +1,36 @@
+@use '../mixin/flexbox' as flex;
+@use '../modules/inputs' as input;
+
+.btns-wrapper {
+  margin-top: 10px;
+}
+
+.attachment-wrapper {
+  @include flex.flexbox(center, end);
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+}
+
+.nweet {
+  @include flex.column-flexbox(center, start);
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 4px;
+
+  .content {
+    font-size: 16px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+}
