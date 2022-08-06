@@ -2,9 +2,10 @@
 
 .nav {
   max-width: 200px;
-  
+
   ul {
     @include flex.column-flexbox(center, start);
+    margin-bottom: 20px;
 
     li {
       &:not(:last-child) {
