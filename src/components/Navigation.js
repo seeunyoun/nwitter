@@ -9,7 +9,7 @@ const Navigation = ({ userObj }) => {
     else return userObj.displayName;
   })();
   const activeStyle = {
-    'borderBottom': '1px solid #000',
+    'borderBottom': '1px solid darkgrey',
   }
   return (
     <nav className='nav'>
