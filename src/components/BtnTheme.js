@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 
-function BtnTheme() {
-  const [theme, setTheme] = useState('Light');
+const BtnTheme = () => {
+  const btnThemeText = (() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'Light';
+    else return 'Dark';
+  })();
+  const [theme, setTheme] = useState(btnThemeText);
   const onClick = () => {
-    if (theme === 'Light') setTheme('Dark');
-    else setTheme('Light');
+    const $theme = document.querySelector('html');
+    if (theme === 'Light') {
+      setTheme('Dark');
+      $theme.classList.add('light');
+      $theme.classList.remove('dark');
+    }
+    else {
+      setTheme('Light');
+      $theme.classList.add('dark');
+      $theme.classList.remove('light');
+    }
   }
 
   return (

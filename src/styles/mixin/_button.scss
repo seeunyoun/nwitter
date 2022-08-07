@@ -14,16 +14,8 @@ $color-map: (
   @return map-get($color-map, $key);
 }
 
-@mixin btnColors($bg: secondary, $font: primary, $border: border, $dark_bg: primary, $dark_font: secondary, $dark_border: border) {
-  @media (prefers-color-scheme: light) {
-    border: 1px solid _get-btn-colors($border);
-    background-color: _get-btn-colors($bg);
-    color: _get-btn-colors($font);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    border: 1px solid _get-btn-colors($dark_border);
-    background-color: _get-btn-colors($dark_bg);
-    color: _get-btn-colors($dark_font);
-  }
+@mixin btnColors($bg: secondary, $font: primary, $border: border) {
+  border: 1px solid _get-btn-colors($border);
+  background-color: _get-btn-colors($bg);
+  color: _get-btn-colors($font);
 }

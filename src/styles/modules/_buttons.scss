@@ -12,7 +12,17 @@
   transition: all 200ms ease-in-out;
 
   &:hover {
-    @include btnColors(btn_blue, secondary, border, primary, btn_blue, btn_blue);
+    @include btnColors(btn_blue, secondary, border);
+  }
+}
+
+.dark {
+  %btn-base {
+    @include btnColors(primary, secondary, border);
+
+    &:hover {
+      @include btnColors(primary, btn_blue, btn_blue);
+    }
   }
 }
 

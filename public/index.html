@@ -40,4 +40,11 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    const currentOsColorTheme = (()=>{
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+      else return 'light';
+    })()
+    document.querySelector('html').setAttribute('class', currentOsColorTheme);
+  </script>
 </html>
