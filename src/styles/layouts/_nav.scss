@@ -1,10 +1,11 @@
-@use '../mixin/flexbox' as flex;
+@use '../mixin/flexbox' as *;
+@use '../mixin/responsive' as *;
 
 .nav {
-  max-width: 200px;
+  margin-bottom: 40px;
 
   ul {
-    @include flex.column-flexbox(center, start);
+    @include column-flexbox(center, start);
     margin-bottom: 20px;
 
     li {
@@ -16,4 +17,9 @@
       }
     }
   }
+
+  @include responsive(T) {
+    margin-bottom: 0;
+  }
+
 }

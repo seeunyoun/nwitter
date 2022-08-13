@@ -1,0 +1,33 @@
+@use '../mixin/flexbox' as *;
+@use '../mixin/responsive' as *;
+
+.profile {
+  .title {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+
+  form {
+    @include column-flexbox;
+  }
+
+  .btn-logout {
+    width: 100%;
+  }
+
+  @include responsive(T) {
+    form {
+      flex-direction: row;
+
+      input[type=text] {
+        flex: 2;
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+
+      input[type=submit] {
+        flex: 1;
+      }
+    }
+  }
+}

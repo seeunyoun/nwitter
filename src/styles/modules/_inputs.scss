@@ -1,4 +1,4 @@
-@use '../mixin/flexbox' as flex;
+@use '../mixin/flexbox' as *;
 
 %input-base {
   display: block;
@@ -23,19 +23,20 @@
 }
 
 form {
-  @include flex.column-flexbox;
   width: 100%;
-  margin: 0 0 24px;
+  margin-bottom: 40px;
 
   input:not(:last-child) {margin-bottom: 12px;}
+
   input[type=text],
   input[type=email],
   input[type=password] {
     @extend %input-base;
   }
+  
   input[type=submit] {
     @extend %input-base;
-    width: fit-content;
+    width: 100%;
     padding: 0 12px;
     border: 0;
     background-color: #3068ef;

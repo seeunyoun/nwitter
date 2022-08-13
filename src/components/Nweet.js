@@ -52,7 +52,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
       ) : (
         <>
           <h4 className='content'>{nweetObj.text}</h4>
-          <div className='time'>{timestamp}</div>
+          <time className='time' datetime={timestamp}>{timestamp}</time>
           {nweetObj.attachmentUrl && <img src={nweetObj.attachmentUrl} width='50' height='50' alt='' />}
           {isOwner && (
             <div className="btns-wrapper">

@@ -47,7 +47,7 @@ const NweetFactory = ({ userObj }) => {
       <input className='input-attachment' type="file" accept='image/*' onChange={onFileChange} />
       <input type="submit" value='Nweet' />
       {attachment &&
-      <div className='attachment-wrapper'>
+      <div className='attachment-preview'>
         <img src={attachment} width='50' height='50' alt ='' />
         <button onClick={onClearAttachmentClick}>Clear</button>
       </div>

@@ -1,13 +1,19 @@
-@use '../mixin/flexbox' as flex;
+@use '../mixin/flexbox' as *;
 
-.auth-form-wrapper {
-  width: 100%;
-  margin: 0 0 20px;
-  padding: 0 40px;
+.auth {
+  .title {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
 
-  .toggle-text {
-    @include flex.flexbox();
-    text-decoration: underline;
-    cursor: pointer;
+  &-form {
+    width: 100%;
+    margin: 0 0 20px;
+
+    &-toggle {
+      @include flexbox();
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }

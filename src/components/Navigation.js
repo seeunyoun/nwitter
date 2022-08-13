@@ -12,17 +12,19 @@ const Navigation = ({ userObj }) => {
     'borderBottom': '1px solid darkgrey',
   }
   return (
-    <nav className='nav'>
-      <ul>
-        <li>
-          <NavLink exact to='/' activeStyle={activeStyle}>Home</NavLink>
-        </li>
-        <li>
-          <NavLink to='/profile' activeStyle={activeStyle}>{userName}'s Profile</NavLink>
-        </li>
-      </ul>
-      <BtnTheme />
-    </nav>
+    <div className="col-sm-4 col-md-4 col-lg-3">
+      <nav className='nav'>
+        <ul>
+          <li>
+            <NavLink exact to='/' activeStyle={activeStyle}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to='/profile' activeStyle={activeStyle}>{userName}'s Profile</NavLink>
+          </li>
+        </ul>
+        <BtnTheme />
+      </nav>
+    </div>
   )
 }
 
